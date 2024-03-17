@@ -163,7 +163,7 @@ def generate_images(
 
         imgs = []
         angle_p = -0.2
-        angles = [(angle / 100, angle_p) for angle in range(0, 110, 10)]
+        angles = [(angle / 100, angle_p) for angle in reversed(range(-100, 110, 10))]
         for angle_y, angle_p in angles:
             cam_pivot = torch.tensor(G.rendering_kwargs.get('avg_camera_pivot', [0, 0, 0]), device=device)
             cam_radius = G.rendering_kwargs.get('avg_camera_radius', 2.7)
